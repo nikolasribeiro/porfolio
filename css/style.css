@@ -119,16 +119,22 @@ body {
   padding: 6.5px;
 }
 
-/* Landing */
-#main {
+.home {
+  width: 100%;
+  height: 100vh;
+  background-color: red;
+  /* Landing */
+  /* Social Buttons */
+}
+.home #main {
   border: 1px solid #f26c4f;
-  margin-top: 30px;
+  margin-top: 80px;
   overflow: hidden;
   border-radius: 0px 40px 0px 40px;
   height: 360px;
-  transition: all 1s;
+  transition: all 500ms;
 }
-#main .banner {
+.home #main .banner {
   display: block;
   float: left;
   width: 65%;
@@ -136,24 +142,25 @@ body {
   margin-top: 60px;
   overflow: hidden;
 }
-#main .banner #name {
+.home #main .banner #name {
   text-transform: uppercase;
   font-size: 100px;
   display: block;
   margin-top: 5px;
   margin-left: 100px;
 }
-#main .banner #surname {
+.home #main .banner #surname {
   text-transform: uppercase;
   font-size: 90px;
   margin-top: -90px;
   margin-left: 50%;
 }
-#main .banner #name, #main .banner #surname {
+.home #main .banner #name, .home #main .banner #surname {
+  transition: all 2s;
   color: white;
   font-family: "Roboto", sans-serif;
 }
-#main #short-about {
+.home #main #short-about {
   display: block;
   width: 30%;
   height: 100%;
@@ -166,68 +173,58 @@ body {
   background-color: #222;
   font-family: "Roboto", sans-serif;
 }
-#main #short-about h5 {
+.home #main #short-about h5 {
   display: block;
   width: 70%;
   color: #f26c4f;
   margin-bottom: 10px;
   margin-top: 10px;
 }
-#main #short-about h3 {
+.home #main #short-about h3 {
   display: block;
   margin-top: 20px;
 }
-#main #short-about #short-description {
+.home #main #short-about #short-description {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-#main #short-about #short-description #highlight {
+.home #main #short-about #short-description #highlight {
   color: #f26c4f;
 }
-#main #short-about #email a {
+.home #main #short-about #email a {
   color: #f26c4f;
   text-decoration: none;
 }
-
-#main:hover {
-  background-color: #f26c4f;
+.home #main:hover {
+  box-shadow: 1px 1px 1px #f26c4f, 2px 2px 1px #f26c4f, 3px 3px 1px #f26c4f, 4px 4px 1px #f26c4f, 5px 5px 1px #f26c4f, 6px 6px 1px #f26c4f, 7px 7px 1px #f26c4f, 8px 8px 1px #f26c4f, 9px 9px 1px #f26c4f, 10px 10px 1px #f26c4f;
 }
-#main:hover #name {
-  animation: jump 2s linear;
+.home #main:hover #name {
+  text-shadow: 1px 1px 1px #f26c4f, 2px 2px 1px #f26c4f, 3px 3px 1px #f26c4f, 4px 4px 1px #f26c4f, 5px 5px 1px #f26c4f, 6px 6px 1px #f26c4f, 7px 7px 1px #f26c4f, 8px 8px 1px #f26c4f, 9px 9px 1px #f26c4f, 10px 10px 1px #f26c4f;
+  transform: scale(1.1, 1.1);
 }
-#main:hover #surname {
-  animation: jump 3s linear;
+.home #main:hover #surname {
+  text-shadow: 1px 1px 1px #f26c4f, 2px 2px 1px #f26c4f, 3px 3px 1px #f26c4f, 4px 4px 1px #f26c4f, 5px 5px 1px #f26c4f, 6px 6px 1px #f26c4f, 7px 7px 1px #f26c4f, 8px 8px 1px #f26c4f, 9px 9px 1px #f26c4f, 10px 10px 1px #f26c4f;
+  transform: scale(1.1, 1.1);
 }
-
-@keyframes jump {
-  0% {
-    text-shadow: 1px 1px 1px black;
-  }
-  50% {
-    text-shadow: 1px 1px 1px black, 2px 2px 1px black, 3px 3px 1px black, 4px 4px 1px black, 5px 5px 1px black, 6px 6px 1px black, 7px 7px 1px black, 8px 8px 1px black, 9px 9px 1px black, 10px 10px 1px black;
-  }
-  100% {
-    text-shadow: 1px 1px 1px black;
-  }
-}
-/* Social Buttons */
-#social {
+.home #social {
   display: block;
   width: 100%;
   height: 100px;
-  margin-top: 50px;
+  margin-top: 160px;
+  margin-left: 12%;
 }
-#social .box {
+.home #social .box {
   display: block;
   float: left;
-  margin-right: 120px;
   width: 300px;
   height: 100%;
   border: 1px solid #f26c4f;
   border-radius: 0px 30px 0px 30px;
   cursor: pointer;
+  margin-right: 200px;
+  transition: all 300ms;
 }
-#social .box a {
+.home #social .box a {
   display: block;
   text-decoration: none;
   line-height: 90px;
@@ -236,12 +233,17 @@ body {
   height: 100%;
   margin-right: 10px;
   text-align: center;
+  color: white;
 }
-#social .box a #linkedin, #social .box a #github, #social .box a #gitlab {
+.home #social .box a #linkedin, .home #social .box a #github, .home #social .box a #gitlab {
   font-family: "Roboto", sans-serif;
 }
-#social .box:last-child {
+.home #social .box:last-child {
   margin-right: 0px;
+}
+.home #social .box:hover {
+  transform: scale(1.1, 1.1);
+  box-shadow: 1px 1px 1px #f26c4f, 2px 2px 1px #f26c4f, 3px 3px 1px #f26c4f, 4px 4px 1px #f26c4f, 5px 5px 1px #f26c4f, 6px 6px 1px #f26c4f, 7px 7px 1px #f26c4f, 8px 8px 1px #f26c4f, 9px 9px 1px #f26c4f, 10px 10px 1px #f26c4f;
 }
 
 /*# sourceMappingURL=style.css.map */

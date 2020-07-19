@@ -15,9 +15,19 @@
 $bg-color: #1f1b24;
 $primary: #f26c4f;
 $secondary: #222;
+$primary-shadow: #bb563f;
 $font-name: "Roboto", sans-serif;
 $font-color: white;
-
+$shadow-3d: 1px 1px 1px $primary,
+            2px 2px 1px $primary,
+            3px 3px 1px $primary,
+            4px 4px 1px $primary,
+            5px 5px 1px $primary,
+            6px 6px 1px $primary,
+            7px 7px 1px $primary,
+            8px 8px 1px $primary,
+            9px 9px 1px $primary,
+            10px 10px 1px $primary;
 
 
 /* General Aspects */
@@ -154,169 +164,171 @@ body{
     }
 }
 
-/* Landing */
-#main{
-    border: 1px solid $primary;
-    margin-top: 30px;
-    overflow: hidden;
-    border-radius: 0px 40px 0px 40px;
-    height: 360px;
-    transition: all 1s;
+.home{
+
+    width: 100%;
+    height: 100vh;
+    background-color: red;
+    
+    /* Landing */
+    #main{
+
+        border: 1px solid $primary;
+        margin-top: 80px;
+        overflow: hidden;
+        border-radius: 0px 40px 0px 40px;
+        height: 360px;
+        transition: all 500ms;
     
 
-    .banner{
-        display: block;
-        float: left;
-        width: 65%;
-        height: 100%;
-        margin-top: 60px;
-
-        overflow: hidden;
-
-
-        #name{
-            text-transform: uppercase;
-            font-size: 100px;
+        .banner{
             display: block;
-            margin-top: 5px;
-            margin-left: 100px;
+            float: left;
+            width: 65%;
+            height: 100%;
+            margin-top: 60px;
+            overflow: hidden;
+
+
+            #name{
+                text-transform: uppercase;
+                font-size: 100px;
+                display: block;
+                margin-top: 5px;
+                margin-left: 100px;
+            }
+
+            #surname{
+                text-transform: uppercase;
+                font-size: 90px;
+                margin-top: -90px;
+                margin-left: 50%;
+            }
+
+            #name, #surname{
+                transition: all 2s;
+                color: white;
+                font-family: $font-name;
+
+            }
         }
 
-        #surname{
-            text-transform: uppercase;
-            font-size: 90px;
-            margin-top: -90px;
-            margin-left: 50%;
-        }
-
-        #name, #surname{
+    
+        #short-about{
+            display: block;
+            width: 30%;
+            height: 100%;
+            padding: 15px;
+            float: right;
             color: white;
+            overflow: hidden;
+            border: 1px solid $primary;
+            border-radius: 0px 0px 0px 40px;
+            background-color: $secondary;
             font-family: $font-name;
             
-        }
-    }
-
-    
-    #short-about{
-        display: block;
-        width: 30%;
-        height: 100%;
-        padding: 15px;
-        float: right;
-        color: white;
-        overflow: hidden;
-        border: 1px solid $primary;
-        border-radius: 0px 0px 0px 40px;
-        background-color: $secondary;
-        font-family: $font-name;
-        h5{
-            display: block;
-            width: 70%;
-            color: $primary;
-            margin-bottom: 10px;
-            margin-top: 10px;
-        }
-
-
-        h3{
-            display: block;
-            margin-top: 20px;
-        }
-
-        #short-description{
-            margin-top: 20px;
-            margin-bottom: 20px;
-            
-            #highlight{
+            h5{
+                display: block;
+                width: 70%;
                 color: $primary;
+                margin-bottom: 10px;
+                margin-top: 10px;
             }
-        }
 
-        #email{
-            a{
-                color: $primary;
-                text-decoration: none;
+
+            h3{
+                display: block;
+                margin-top: 20px;
             }
-        }
+
+            #short-description{
+                margin-top: 20px;
+                margin-bottom: 20px;
+
+                #highlight{
+                    color: $primary;
+                }
+            }
+
+            #email{
+                a{
+                    color: $primary;
+                    text-decoration: none;
+                }
+            }
 
         
+        }
+
     }
 
-}
-
-#main:hover{
-
-    background-color: $primary;
-
-    #name{
-        animation: jump 2s linear;
-    }
-    #surname{
-        animation: jump 3s linear;
-    }
+    #main:hover{
+    
+        box-shadow: $shadow-3d;
+    
+        #name{
+            text-shadow: $shadow-3d;
+            transform: scale(1.1,1.1);
+        }
+        #surname{
+            text-shadow: $shadow-3d;
+            transform: scale(1.1,1.1);
+        }
     
     
 
-}
-
-@keyframes jump{
-    0%{
-        text-shadow: 1px 1px 1px black;
     }
-    50%{
-        text-shadow: 1px 1px 1px black,
-                     2px 2px 1px black,
-                     3px 3px 1px black,
-                     4px 4px 1px black,
-                     5px 5px 1px black,
-                     6px 6px 1px black,
-                     7px 7px 1px black,
-                     8px 8px 1px black,
-                     9px 9px 1px black,
-                     10px 10px 1px black,
-    }
-    100%{
-        text-shadow: 1px 1px 1px black;
-    }
-}
 
-/* Social Buttons */
-#social{
-    display: block;
-    width: 100%;
-    height: 100px;
-    margin-top: 50px;
-
-
-    .box{
+    /* Social Buttons */
+    #social{
         display: block;
-        float:left;
-        margin-right: 120px;
-        width: 300px;
-        height: 100%;
-        border: 1px solid $primary;
-        border-radius: 0px 30px 0px 30px;
-        cursor: pointer;
+        width: 100%;
+        height: 100px;
+        margin-top: 160px;
+        margin-left: 12%;
 
-        a{
+        .box{
             display: block;
-            text-decoration: none;
-            line-height: 90px;
-            font-size: 30px;
-            width: 100%;
+            float:left;
+            width: 300px;
             height: 100%;
-            margin-right: 10px;
-            text-align: center;
-            #linkedin, #github, #gitlab{
-                font-family: $font-name;
+            border: 1px solid $primary;
+            border-radius: 0px 30px 0px 30px;
+            cursor: pointer;
+            margin-right: 200px;
+            transition: all 300ms;
+
+            a{
+                display: block;
+                text-decoration: none;
+                line-height: 90px;
+                font-size: 30px;
+                width: 100%;
+                height: 100%;
+                margin-right: 10px;
+                text-align: center;
+                color: white;
+
+                #linkedin, #github, #gitlab{
+                    font-family: $font-name;
+
+                }
+
             }
         }
-    }
 
-    .box:last-child{
-        margin-right: 0px;
-    }
+        .box:last-child{
+            margin-right: 0px;
+        }
+
+        .box:hover{
+            transform: scale(1.1, 1.1);
+            box-shadow: $shadow-3d;
+
+        }
 
 
+    } 
+}
 
-} 
+
