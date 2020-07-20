@@ -139,15 +139,23 @@ body {
   float: left;
   width: 65%;
   height: 100%;
-  margin-top: 60px;
   overflow: hidden;
+}
+.home #main .banner #me-banner {
+  display: block;
+  height: 110%;
+  transform: rotateY(180deg);
+  float: left;
+  margin-right: 50px;
+  z-index: 2;
 }
 .home #main .banner #name {
   text-transform: uppercase;
   font-size: 100px;
   display: block;
-  margin-top: 5px;
+  line-height: 130px;
   margin-left: 100px;
+  z-index: 1;
 }
 .home #main .banner #surname {
   text-transform: uppercase;
@@ -196,22 +204,19 @@ body {
   text-decoration: none;
 }
 .home #main:hover {
-  box-shadow: 1px 1px 1px #f26c4f, 2px 2px 1px #f26c4f, 3px 3px 1px #f26c4f, 4px 4px 1px #f26c4f, 5px 5px 1px #f26c4f, 6px 6px 1px #f26c4f, 7px 7px 1px #f26c4f, 8px 8px 1px #f26c4f, 9px 9px 1px #f26c4f, 10px 10px 1px #f26c4f;
+  box-shadow: 1px 1px 1px #f26c4f, 2px 2px 1px #f26c4f, 3px 3px 1px #f26c4f, 4px 4px 1px #f26c4f, 5px 5px 1px #f26c4f, 6px 6px 1px #ce5e44, 7px 7px 1px #bb543c, 8px 8px 1px #944330, 9px 9px 1px #692f21, 10px 10px 1px #4e2318;
 }
-.home #main:hover #name {
-  text-shadow: 1px 1px 1px #f26c4f, 2px 2px 1px #f26c4f, 3px 3px 1px #f26c4f, 4px 4px 1px #f26c4f, 5px 5px 1px #f26c4f, 6px 6px 1px #f26c4f, 7px 7px 1px #f26c4f, 8px 8px 1px #f26c4f, 9px 9px 1px #f26c4f, 10px 10px 1px #f26c4f;
-  transform: scale(1.1, 1.1);
-}
-.home #main:hover #surname {
-  text-shadow: 1px 1px 1px #f26c4f, 2px 2px 1px #f26c4f, 3px 3px 1px #f26c4f, 4px 4px 1px #f26c4f, 5px 5px 1px #f26c4f, 6px 6px 1px #f26c4f, 7px 7px 1px #f26c4f, 8px 8px 1px #f26c4f, 9px 9px 1px #f26c4f, 10px 10px 1px #f26c4f;
+.home #main:hover #name, .home #main:hover #surname {
+  text-shadow: 1px 1px 1px #f26c4f, 2px 2px 1px #f26c4f, 3px 3px 1px #f26c4f, 4px 4px 1px #f26c4f, 5px 5px 1px #f26c4f, 6px 6px 1px #ce5e44, 7px 7px 1px #bb543c, 8px 8px 1px #944330, 9px 9px 1px #692f21, 10px 10px 1px #4e2318;
   transform: scale(1.1, 1.1);
 }
 .home #social {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100px;
   margin-top: 160px;
-  margin-left: 12%;
 }
 .home #social .box {
   display: block;
@@ -238,12 +243,18 @@ body {
 .home #social .box a #linkedin, .home #social .box a #github, .home #social .box a #gitlab {
   font-family: "Roboto", sans-serif;
 }
+.home #social .box:first-child {
+  margin-left: 0px;
+}
 .home #social .box:last-child {
   margin-right: 0px;
 }
 .home #social .box:hover {
   transform: scale(1.1, 1.1);
-  box-shadow: 1px 1px 1px #f26c4f, 1px 2px 1px #f26c4f, 1px 3px 1px #f26c4f, 1px 4px 1px #f26c4f, 1px 5px 1px #f26c4f, 1px 6px 1px #f26c4f, 1px 7px 1px #f26c4f, 1px 8px 1px #f26c4f, 1px 9px 1px #f26c4f, 1px 10px 1px #f26c4f;
+  box-shadow: 1px 1px 1px #f26c4f, 1px 2px 1px #f26c4f, 1px 3px 1px #f26c4f, 1px 4px 1px #f26c4f, 1px 5px 1px #f26c4f, 1px 6px 1px #ce5e44, 1px 7px 1px #bb543c, 1px 8px 1px #944330, 1px 9px 1px #692f21, 1px 10px 1px #4e2318;
 }
+
+/* Media Querys */
+/*First Break-Point: 1220px*/
 
 /*# sourceMappingURL=style.css.map */
