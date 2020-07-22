@@ -67,6 +67,22 @@ body{
     float: none;
 }
 
+.burger{
+    display: none;
+    width: 60px;
+    height: 10px;
+    background-color: red;
+    float: left;
+
+    span{
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: $primary;
+        margin-bottom: 10px;
+    }
+}
+
 /* Header */
 #logo{
     display: block;
@@ -359,4 +375,17 @@ body{
 }
 
 /* Media Querys */
-/*First Break-Point: 1220px*/
+@media (max-width: 1024px){
+
+    #logo{
+        margin-right: 5%;
+    }
+
+    #short-about{
+        font-size: 14px;
+    }
+
+
+
+
+}
