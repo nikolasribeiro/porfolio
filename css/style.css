@@ -48,6 +48,11 @@ body {
 }
 
 /* Header */
+#header {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 #logo {
   display: block;
   width: 60px;
@@ -74,15 +79,14 @@ body {
 }
 
 #menu ul li {
-  display: inline-block;
+  display: flex;
   margin-top: 5px;
   margin-right: 15px;
   text-align: center;
   float: left;
 }
 #menu ul li a {
-  display: block;
-  width: 100%;
+  flex-grow: 1;
   padding: 15px;
   text-decoration: none;
   color: white;
@@ -105,11 +109,11 @@ body {
   }
 }
 #search {
-  float: right;
-  line-height: 60px;
+  align-self: center;
 }
 #search .box-search {
-  overflow: hidden;
+  display: flex;
+  flex-direction: row;
 }
 #search .box-search input[type=text] {
   border: 1px solid #4d4d4d;
@@ -118,22 +122,17 @@ body {
   color: #ccc;
   padding: 5px;
   width: 90%;
-  padding-left: 10px;
-  padding-right: 30px;
 }
 #search .box-search input[type=text]:focus {
   border: 1px solid #f26c4f;
   color: white;
 }
 #search .box-search input[type=button] {
-  position: absolute;
   background-color: #f26c4f;
   border: 1px solid #f26c4f;
   border-radius: 0px 5px 5px 0px;
   color: white;
-  top: 44px;
-  right: 60px;
-  padding: 6.5px;
+  padding: 10px;
 }
 
 .home {
@@ -144,56 +143,49 @@ body {
   /* Social Buttons */
 }
 .home #main {
-  border: 1px solid #f26c4f;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   overflow: hidden;
+  border: 1px solid #f26c4f;
   border-radius: 0px 40px 0px 40px;
   height: 360px;
   transition: all 500ms;
 }
 .home #main .banner {
-  display: block;
-  float: left;
-  width: 65%;
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
   height: 100%;
-  overflow: hidden;
 }
 .home #main .banner #me-banner {
-  display: block;
-  height: 110%;
+  flex-grow: 1;
+  height: 100%;
   transform: rotateY(180deg);
-  float: left;
-  margin-right: 50px;
-  z-index: 2;
 }
-.home #main .banner #name {
-  text-transform: uppercase;
-  font-size: 100px;
-  display: block;
-  line-height: 130px;
-  margin-left: 100px;
-  z-index: 1;
+.home #main .banner .text-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
 }
-.home #main .banner #surname {
+.home #main .banner .text-name #name, .home #main .banner .text-name #surname {
   text-transform: uppercase;
   font-size: 90px;
-  margin-top: -90px;
-  margin-left: 50%;
-}
-.home #main .banner #name, .home #main .banner #surname {
   transition: all 2s;
   color: white;
   font-family: "Roboto", sans-serif;
 }
+.home #main .banner .text-name #name {
+  margin-left: 50px;
+  margin-right: 60px;
+}
 .home #main #short-about {
-  display: block;
   width: 30%;
-  height: 100%;
   padding: 15px;
-  float: right;
   color: white;
-  overflow: hidden;
   border: 1px solid #f26c4f;
-  border-radius: 0px 0px 0px 40px;
+  border-radius: 0px 40px 0px 40px;
   background-color: #222;
   font-family: "Roboto", sans-serif;
 }
@@ -224,7 +216,7 @@ body {
 }
 .home #main:hover #name, .home #main:hover #surname {
   text-shadow: 1px 1px 1px #f26c4f, 2px 2px 1px #f26c4f, 3px 3px 1px #f26c4f, 4px 4px 1px #f26c4f, 5px 5px 1px #f26c4f, 6px 6px 1px #ce5e44, 7px 7px 1px #bb543c, 8px 8px 1px #944330, 9px 9px 1px #692f21, 10px 10px 1px #4e2318;
-  transform: scale(1.1, 1.1);
+  transform: scale(1.1);
 }
 .home #social {
   display: flex;
@@ -235,8 +227,7 @@ body {
   margin-top: 160px;
 }
 .home #social .box {
-  display: block;
-  float: left;
+  flex-grow: 1;
   width: 300px;
   height: 100%;
   border: 1px solid #f26c4f;
@@ -271,6 +262,13 @@ body {
 }
 
 /* Media Querys */
+@media (max-width: 1440px) {
+  .text-name {
+    flex-direction: column;
+    margin-top: -50px;
+    margin-left: 50px;
+  }
+}
 @media (max-width: 1024px) {
   #logo {
     margin-right: 5%;
@@ -278,6 +276,14 @@ body {
 
   #short-about {
     font-size: 14px;
+  }
+
+  #me-banner {
+    margin: 0px;
+  }
+
+  .text-name {
+    margin-left: -50px;
   }
 }
 
