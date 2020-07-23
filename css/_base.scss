@@ -51,6 +51,7 @@ $shadow-3d-vertical: 1px 1px 1px $primary,
 body{
     background-color: $bg-color;
     overflow-x: hidden;
+    font-family: $font-name;
 }
 
 .wrap{
