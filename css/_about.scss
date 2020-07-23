@@ -102,3 +102,36 @@ $border-rad: 0px 30px 0px 30px;
     }
     
 }
+
+/* Media Querys About */
+@media (max-width: 1024px){
+
+    #image2{
+        width: 40%;
+    }
+
+    #image1{
+        width: 40% !important;
+    }
+
+}
+
+@media (max-width: 768px){
+
+    #image2{
+        display: none;
+    }
+
+    #image1{
+        width: 50% !important;
+    }
+
+}
+
+@media (max-width: 425px){
+
+    #image1{
+        display: none;
+    }
+
+}
