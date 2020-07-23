@@ -345,12 +345,12 @@ body {
   }
 
   #short-about {
-    font-size: 21px !important;
+    font-size: 18px !important;
   }
 }
 @media (max-width: 375px) {
   #short-about {
-    font-size: 19px !important;
+    font-size: 16px !important;
   }
 }
 /* ==== /Index ==== */
