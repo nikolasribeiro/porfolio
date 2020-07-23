@@ -255,8 +255,21 @@
             margin-right: 0px !important;
             margin-bottom: 30px;
         }
+    } 
+
+}
+
+@media (max-width: 425px){
+
+    .text-name{
+        margin-left: 3px;
+        #name, #surname{
+            font-size: 80px !important;
+        }
     }
-   
-   
+
+    #short-about{
+        font-size: 21px !important;
+    }
 
 }

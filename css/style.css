@@ -336,6 +336,18 @@ body {
     margin-bottom: 30px;
   }
 }
+@media (max-width: 425px) {
+  .text-name {
+    margin-left: 3px;
+  }
+  .text-name #name, .text-name #surname {
+    font-size: 80px !important;
+  }
+
+  #short-about {
+    font-size: 21px !important;
+  }
+}
 /* ==== /Index ==== */
 /* ==== About ==== */
 /* ==== /About ==== */
