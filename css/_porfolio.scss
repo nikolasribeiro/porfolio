@@ -1,0 +1,120 @@
+#container{
+    margin-top: 70px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 1px solid $primary;
+    border-radius: 0px 30px 0px 30px;
+
+
+    #title-heading{
+        color: $primary;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-left: 5%;
+        margin-bottom: 30px;
+        font-size: 50px;
+    }
+
+    #articles{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    #projects{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        flex-basis: 70%;
+
+    }
+
+    .project{
+        flex-grow: 1;
+        overflow: hidden;
+        margin-bottom: 25px;
+        margin-right: 30px;
+        border: 1px solid #ccc;
+        border-radius: 0px 30px 0px 30px;
+        transition: all 300ms;
+
+        img{
+            width: 100%;
+        }
+    }
+    .project:hover{
+        transform: scale(1.1,1.1);
+        cursor: pointer;
+
+        .project-info{
+
+            background-color: $primary;
+        }
+    }
+
+    .project-info{
+        padding: 10px;
+        text-align: center;
+        transition: all 300ms;
+
+        a{
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 300ms;
+        }
+
+        a:hover{
+            text-decoration: underline;
+            text-shadow: 1px 1px 3px black;
+        }
+
+        p{
+            margin-top: 7px;
+        }
+    }
+}
+
+#category{
+    flex-basis: 15%;
+    margin-right: 30px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+
+    ul{
+        list-style: none;
+        margin-top: 50%;
+        li{
+            overflow: hidden;
+            border: 1px solid $primary;
+            border-radius: 0px 30px 0px 30px;
+            transition: all 300ms;
+            margin-bottom: 30px;
+        }
+
+        li:hover{
+            transform: translateX(20px);;
+        }
+    }
+
+    a{
+        display: block;
+        padding: 20px;
+        text-align: center;
+        transition: all 300ms;
+        text-transform: uppercase;
+        color: white;
+        text-decoration: none;
+    }
+
+    a:hover{
+        background-color: $primary;
+    }
+}
