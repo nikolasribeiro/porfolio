@@ -348,6 +348,11 @@ body {
     font-size: 21px !important;
   }
 }
+@media (max-width: 375px) {
+  #short-about {
+    font-size: 19px !important;
+  }
+}
 /* ==== /Index ==== */
 /* ==== About ==== */
 /* ==== /About ==== */
