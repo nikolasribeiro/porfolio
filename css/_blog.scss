@@ -165,3 +165,40 @@ $shadow-button: -1px 0px 1px $primary,
        
     }
 }
+
+/* Media Querys */
+@media (max-width: 1024px){
+
+    .posts{
+        flex-direction: column;
+    }
+
+    #aside-blog{
+        width: 85%;
+
+        h2{
+            text-align: center;
+        }
+
+        ul{
+           
+            li{
+                a{
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+
+    .post{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-height: 100vh !important;
+    }
+
+}
