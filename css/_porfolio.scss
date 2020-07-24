@@ -9,6 +9,7 @@
     border-radius: 0px 30px 0px 30px;
 
 
+
     #title-heading{
         color: $primary;
         text-transform: uppercase;
@@ -37,13 +38,14 @@
         overflow: hidden;
         margin-bottom: 25px;
         margin-right: 30px;
-        border: 1px solid #ccc;
+        border: 3px solid #ccc;
         border-radius: 0px 30px 0px 30px;
         transition: all 300ms;
-        width: 30%;
-        height: 22%;
+        width: 250px;
+        height: 250px;
         img{
             width: 100%;
+            height: 180px;
         }
         
     }
@@ -92,7 +94,6 @@
 
     ul{
         list-style: none;
-        margin-top: 50%;
         li{
             overflow: hidden;
             border: 1px solid $primary;
