@@ -121,3 +121,19 @@
         background-color: $primary;
     }
 }
+
+/* Media Querys */
+@media (max-width: 768px){
+
+    #category{
+        display: none;
+    }
+
+    #title-heading{
+        text-align: center;
+    }
+
+    #projects{
+        margin-left: 45px;
+    }
+}

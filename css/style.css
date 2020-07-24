@@ -579,6 +579,20 @@ footer {
   background-color: #f26c4f;
 }
 
+/* Media Querys */
+@media (max-width: 768px) {
+  #category {
+    display: none;
+  }
+
+  #title-heading {
+    text-align: center;
+  }
+
+  #projects {
+    margin-left: 45px;
+  }
+}
 /* ==== /Porfolio ==== */
 
 /*# sourceMappingURL=style.css.map */
