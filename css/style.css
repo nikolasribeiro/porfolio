@@ -646,6 +646,26 @@ footer {
   padding: 10px;
 }
 
+@media (max-width: 1440px) {
+  .container {
+    width: 40%;
+  }
+}
+@media (max-width: 1024px) {
+  .container {
+    width: 50%;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    width: 70%;
+  }
+}
+@media (max-width: 425px) {
+  .container {
+    width: 100%;
+  }
+}
 /* ==== /Contact ==== */
 
 /*# sourceMappingURL=style.css.map */
