@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+    
+    <!--Scripts-->
+    <script src="js/menu.js"></script>
+    <script src="js/modal.js"></script>
+    
 </head>
 
 <body>
@@ -28,14 +34,14 @@
                         <li><a href="index.html"> Home </a></li>
                         <li><a href="about.html"> About Me</a></li>
                         <li><a href="porfolio.html"> Porfolio </a></li>
-                        <li><a href="blog.html"> Personal Blog </a></li>
+                        <li><a href="blog.html"> Blog </a></li>
                         <li><a href="contact.html"> Contact </a></li>
                     </ul>
                 </nav>
                 <div class="burger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span class="line line-1"></span>
+                    <span class="line line-2"></span>
+                    <span class="line line-3"></span>
                 </div>
             </div>
 
@@ -60,7 +66,7 @@
                 <ul>
                     <li><a href="#"> Python </a></li>
                     <li><a href="#"> Web </a></li>
-                    <li><a href="#"> Diseños </a></li>
+                    <li><a href="#"> Designs </a></li>
                 </ul>
                 </aside>
 
@@ -70,7 +76,7 @@
                         <div class="image-wrap silis"><img src="img/silis.png" alt="SILIS Image"></div>
                         <div class="project-info">
                             <a href="https://github.com/nikolasribeiro/SILISv4" target="_BLANK">SILIS</a>
-                            <p>Read More</p>
+                            <p class="read-more">Read More</p>
                         </div>
                     </article>
 
@@ -78,7 +84,7 @@
                         <div class="image-wrap"><img src="img/clicker.png" alt="Clicker Image"></div>
                         <div class="project-info">
                             <a href="https://gitlab.com/nicolasribeiro/clicker" target="_BLANK">Clicker Game</a>
-                            <p>Read More</p>
+                            <p class="read-more">Read More</p>
                         </div>
                     </article>
 
@@ -86,7 +92,7 @@
                         <div class="image-wrap"><img src="img/install-developer.png" alt="Terminal Image"></div>
                         <div class="project-info">
                             <a href="https://github.com/nikolasribeiro/install-developer" target="_BLANK">Install Developer Workstation</a>
-                            <p>Read More</p>
+                            <p class="read-more">Read More</p>
                         </div>
                     </article>
 
@@ -94,7 +100,7 @@
                         <div class="image-wrap"><img src="img/personal-web.png" alt="Website Image"></div>
                         <div class="project-info">
                             <a href="https://github.com/nikolasribeiro/porfolio" target="_BLANK">Personal Web Porfolio</a>
-                            <p>Read More</p>
+                            <p class="read-more">Read More</p>
                         </div>
                     </article>
 
@@ -107,11 +113,69 @@
         </section>
         <!--/Porfolio-->
 
-        
-        
-
 
     </div>
+
+    <div class="modal modal-silis hide">
+        <div class="modal-content">
+            <div class="close-modal">
+                <h3>SILIS</h3>
+                <span class="close">X</span>
+            </div>
+            <img src="img/silis.png" alt="Image Head">
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, expedita delectus inventore beatae reprehenderit modi corporis iure quisquam, nostrum blanditiis, ipsum veritatis dolores ducimus laborum dignissimos iusto tenetur saepe commodi.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, expedita delectus inventore beatae reprehenderit modi corporis iure quisquam, nostrum blanditiis, ipsum veritatis dolores ducimus laborum dignissimos iusto tenetur saepe commodi.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, expedita delectus inventore beatae reprehenderit modi corporis iure quisquam, nostrum blanditiis, ipsum veritatis dolores ducimus laborum dignissimos iusto tenetur saepe commodi.
+            </p>
+        </div>
+    </div>
+
+    <div class="modal modal-clicker hide">
+        <div class="modal-content">
+            <div class="close-modal">
+                <h3>Clicker Game</h3>
+                <span class="close">X</span>
+            </div>
+            <img src="img/clicker.png" alt="Image Head">
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, expedita delectus inventore beatae reprehenderit modi corporis iure quisquam, nostrum blanditiis, ipsum veritatis dolores ducimus laborum dignissimos iusto tenetur saepe commodi.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, expedita delectus inventore beatae reprehenderit modi corporis iure quisquam, nostrum blanditiis, ipsum veritatis dolores ducimus laborum dignissimos iusto tenetur saepe commodi.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, expedita delectus inventore beatae reprehenderit modi corporis iure quisquam, nostrum blanditiis, ipsum veritatis dolores ducimus laborum dignissimos iusto tenetur saepe commodi.
+            </p>
+        </div>
+    </div>
+
+    <div class="modal modal-install hide">
+        <div class="modal-content">
+            <div class="close-modal">
+                <h3>Install Developer Workstation</h3>
+                <span class="close">X</span>
+            </div>
+            <img src="img/install-developer.png" alt="Image Head">
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, expedita delectus inventore beatae reprehenderit modi corporis iure quisquam, nostrum blanditiis, ipsum veritatis dolores ducimus laborum dignissimos iusto tenetur saepe commodi.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, expedita delectus inventore beatae reprehenderit modi corporis iure quisquam, nostrum blanditiis, ipsum veritatis dolores ducimus laborum dignissimos iusto tenetur saepe commodi.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, expedita delectus inventore beatae reprehenderit modi corporis iure quisquam, nostrum blanditiis, ipsum veritatis dolores ducimus laborum dignissimos iusto tenetur saepe commodi.
+            </p>
+        </div>
+    </div>
+
+    <div class="modal modal-personal hide">
+        <div class="modal-content">
+            <div class="close-modal">
+                <h3>Personal Web Porfolio</h3>
+                <span class="close">X</span>
+            </div>
+            <img src="img/personal-web.png" alt="Image Head">
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, expedita delectus inventore beatae reprehenderit modi corporis iure quisquam, nostrum blanditiis, ipsum veritatis dolores ducimus laborum dignissimos iusto tenetur saepe commodi.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, expedita delectus inventore beatae reprehenderit modi corporis iure quisquam, nostrum blanditiis, ipsum veritatis dolores ducimus laborum dignissimos iusto tenetur saepe commodi.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, expedita delectus inventore beatae reprehenderit modi corporis iure quisquam, nostrum blanditiis, ipsum veritatis dolores ducimus laborum dignissimos iusto tenetur saepe commodi.
+            </p>
+        </div>
+    </div>
+
 
 </body>
 

@@ -42,17 +42,18 @@ footer {
 
 .burger {
   display: none;
-  width: 60px;
-  height: 10px;
-  background-color: red;
+  width: 35px;
+  height: 5px;
   float: left;
+  background-color: #222;
 }
-.burger span {
+.burger .line {
   display: block;
   width: 100%;
   height: 100%;
   background-color: #f26c4f;
   margin-bottom: 10px;
+  transition: ease 800ms all;
 }
 
 /* Header */
@@ -146,6 +147,57 @@ footer {
 @media (max-width: 768px) {
   footer {
     display: none;
+  }
+
+  #search {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+    position: fixed;
+    right: 40px;
+  }
+
+  .change #menu {
+    right: 0px;
+  }
+  .change .line-1 {
+    transform: rotateZ(-405deg) translate(-15px, 6px);
+  }
+  .change .line-2 {
+    opacity: 0;
+  }
+  .change .line-3 {
+    transform: rotateZ(405deg) translate(-15px, -6px);
+  }
+
+  #menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: -500px;
+    top: 0px;
+    width: 50%;
+    height: 100vh;
+    transition: right 800ms ease;
+  }
+  #menu ul {
+    background-color: #222;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid #f26c4f;
+    border-radius: 20% 0px 0px 70%;
+  }
+  #menu ul li {
+    font-size: 30px;
+    padding: 20px;
+    text-transform: uppercase;
+  }
+  #menu ul li:first-child {
+    margin-top: 70px;
   }
 }
 /* ==== Index ==== */
@@ -303,14 +355,6 @@ footer {
   }
 }
 @media (max-width: 768px) {
-  #menu, #search {
-    display: none;
-  }
-
-  .burger {
-    display: block;
-  }
-
   #header {
     display: flex;
     justify-content: space-between;
@@ -543,6 +587,11 @@ footer {
 #container .project-info p {
   margin-top: 7px;
 }
+#container .project-info p:hover {
+  cursor: pointer;
+  color: white;
+  text-decoration: underline;
+}
 
 #category {
   flex-basis: 15%;
@@ -579,6 +628,62 @@ footer {
   background-color: #f26c4f;
 }
 
+.modal {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  margin: 0px auto;
+  background-color: rgba(34, 34, 34, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: ease all 300ms;
+}
+.modal .modal-content {
+  width: 90%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid #f26c4f;
+  background-color: #333;
+  border-radius: 0px 30px 0px 30px;
+}
+.modal .modal-content img {
+  width: 50%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.modal .modal-content p {
+  width: 50%;
+  color: white;
+}
+.modal .modal-content .close-modal {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+}
+.modal .modal-content .close-modal h3 {
+  color: white;
+}
+.modal .modal-content .close-modal h3, .modal .modal-content .close-modal span {
+  font-size: 40px;
+}
+.modal .modal-content .close-modal span {
+  color: #f26c4f;
+  margin-left: 30%;
+}
+.modal .modal-content .close-modal span:hover {
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
 /* Media Querys */
 @media (max-width: 768px) {
   #category {
@@ -591,6 +696,21 @@ footer {
 
   #projects {
     margin-left: 45px;
+  }
+
+  .modal-content img {
+    width: 70% !important;
+  }
+  .modal-content p {
+    width: 70% !important;
+  }
+}
+@media (max-width: 425px) {
+  .modal-content img {
+    width: 90% !important;
+  }
+  .modal-content p {
+    width: 90% !important;
   }
 }
 /* ==== /Porfolio ==== */
