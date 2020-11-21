@@ -8,21 +8,22 @@
             <div class="posts">
                 <div id="container-posts">
 
+                    {% for post in blogs %}
                     <article class="post">
 
-                            <img src="{% static 'img/lamp.jpg' %}" alt="Article Image" class="preview-image">
+                        <img src="{{post.image.url}}" alt="Article Image" class="preview-image">
 
                         <div class="article-info">
                             <h2 class="post-title">
-                                <a href="#">I have an Idea</a>
+                                <a href="#">{{post.title}}</a>
                             </h2>
                             <div class="info-published">
-                                <span class="author">Author Name</span>
-                                <span class="date">Jan 18, 2020</span>
+                                <span class="author">{{ post.author }}</span>
+                                <span class="date">{{ post.published }}</span>
                             </div>
                            
                             <p class="post-description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium repellendus ab eaque non! Asperiores dolor minima delectus nesciunt autem beatae, commodi quos veritatis modi nemo expedita quia amet architecto error!
+                                {{ post.description }}
                             </p>
                             <div class="container-button">
                                 <div></div>
@@ -30,13 +31,8 @@
                             </div>
                         </div>
                     </article>
-
-                    
-
-                   
-
-
-                    
+                    {% endfor %}
+ 
                 </div>
 
                 <div id="aside-blog">

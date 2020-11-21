@@ -18,38 +18,17 @@
 
                 <div id="projects">
 
+                    {% for project in projects %}
                     <article class="project">
-                        <div class="image-wrap silis"><img src="{% static 'img/silis.png' %}" alt="SILIS Image"></div>
+                        <div class="image-wrap silis"><img src="{{project.img.url}}" alt="SILIS Image"></div>
                         <div class="project-info">
-                            <a href="https://github.com/nikolasribeiro/SILISv4" target="_BLANK">SILIS</a>
+                            <a href="{{ project.github_url }}" target="_BLANK">{{project.name_project}}</a>
                             <p class="read-more">Read More</p>
                         </div>
                     </article>
+                    {% endfor %}
 
-                    <article class="project">
-                        <div class="image-wrap"><img src="{% static 'img/clicker.png' %}" alt="Clicker Image"></div>
-                        <div class="project-info">
-                            <a href="https://gitlab.com/nicolasribeiro/clicker" target="_BLANK">Clicker Game</a>
-                            <p class="read-more">Read More</p>
-                        </div>
-                    </article>
-
-                    <article class="project">
-                        <div class="image-wrap"><img src="{% static 'img/install-developer.png' %}" alt="Terminal Image"></div>
-                        <div class="project-info">
-                            <a href="https://github.com/nikolasribeiro/install-developer" target="_BLANK">Install Developer Workstation</a>
-                            <p class="read-more">Read More</p>
-                        </div>
-                    </article>
-
-                    <article class="project">
-                        <div class="image-wrap"><img src="{% static 'img/personal-web.png' %}" alt="Website Image"></div>
-                        <div class="project-info">
-                            <a href="https://github.com/nikolasribeiro/porfolio" target="_BLANK">Personal Web Porfolio</a>
-                            <p class="read-more">Read More</p>
-                        </div>
-                    </article>
-
+                    <!--
                     <article class="project">
                         <div class="image-wrap"><a href="https://covid-tracker-nr.netlify.app/" target="_blank" rel="noopener noreferrer"><img src="{% static 'img/covid-tracker.png' %}" alt="Covid Tracker"></a></div>
                         <div class="project-info">
@@ -57,8 +36,7 @@
                             <p class="read-more">Read More</p>
                         </div>
                     </article>
-
-                    <!---->
+                    -->
                  
                 </div>
             </div>

@@ -1,4 +1,6 @@
 from django.shortcuts import render, HttpResponse
+from .models import Porfolio, Blog
+
 
 # Create your views here.
 def index(request):
@@ -9,11 +11,23 @@ def about(request):
 
 #Agregar proyectos de forma dinamica
 def porfolio(request):
-    return render(request, 'blog/porfolio.html')
+    projects = Porfolio.objects.all()
+
+    context = {
+        'projects':projects
+    }
+
+    return render(request, 'blog/porfolio.html', context)
 
 #Agregar articulos al blog de forma dinamica
 def blog(request):
-    return render(request, 'blog/blog.html')
+    blogs = Blog.objects.all()
+
+    context = {
+        'blogs':blogs
+    }
+
+    return render(request, 'blog/blog.html', context)
 
 def contact(request):
     return render(request, 'blog/contact.html')
