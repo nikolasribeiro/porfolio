@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
-
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 class Porfolio(models.Model):
@@ -18,7 +18,7 @@ class Blog(models.Model):
     author          = models.ForeignKey(User, on_delete=models.CASCADE, default="")
     image           = CloudinaryField('image')
     description     = models.TextField(default="")
-    content_of_blog = models.TextField(default="")
+    content_of_blog = RichTextField()
     published       = models.DateTimeField(auto_now=False, auto_now_add=True)
 
     class Meta:

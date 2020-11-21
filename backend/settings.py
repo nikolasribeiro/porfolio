@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
-    'cloudinary'
+    'cloudinary',
+    'ckeditor'
 ]
 
 MIDDLEWARE = [
@@ -140,3 +141,10 @@ cloudinary.config(
   api_key = "565152616216559", 
   api_secret = "nFxH0f9hbVCGtoh08W63gtqDW4E" 
 )
+
+#Ckeditor for blog entrys
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+    },
+}
