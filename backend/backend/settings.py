@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'p@htmwq-frkky6f*$j=z_xy*1=s^+^k7rkn6o_@+-%h#$bl^ux'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['https://personal-web-nicolasribeiro.herokuapp.com/','127.0.0.1']
 
@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    #'whitenoise.middleware.WhiteNoiseMiddleware',
 
 ]
 
@@ -122,8 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL  = '/static/'
-MEDIA_ROOT  = BASE_DIR / 'static/img'
-MEDIA_URL   = '/img/'
+
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
