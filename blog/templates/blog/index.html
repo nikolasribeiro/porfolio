@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicolas Ribeiro</title>
+
+    <!--Custom Styles-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!--Normalize-->
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/x-icon">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+
+    <!--Scripts-->
+    <script src="{% static 'js/menu.js' %}"></script>
+
+</head>
+<body>
+    <div class="wrap">
+        <!--Cabecera-->
+        <header id="header">
+
+            <div id="logo">
+                <p><a href="{% url 'index' %}">NR</a></p>
+            </div>
+
+            <div class="menubar">
+
+                <nav id="menu">
+                    <ul>
+                        <li><a href="{% url 'index' %}"> Home </a></li>
+                        <li><a href="{% url 'about' %}"> About Me</a></li>
+                        <li><a href="{% url 'porfolio' %}"> Porfolio </a></li>
+                        <li><a href="{% url 'blog' %}"> Blog </a></li>
+                        <li><a href="{% url 'contact' %}"> Contact </a></li>
+                    </ul>
+                </nav>
+                
+                <div class="burger">
+                    <span class="line line-1"></span>
+                    <span class="line line-2"></span>
+                    <span class="line line-3"></span>
+                </div>
+            </div>
+
+            <div id="search">
+                <div class="box-search">
+                    <input type="text" placeholder="Buscar...">
+                    <input type="button" value="L" class="icon">
+                </div>
+            </div>
+
+        </header>
+        <!--/Cabecera-->
+
+        {% block content %}
+        <div class="clearfix"></div>
+
+        <!--Landing-->
+        <section class="home">
+
+            <div id="main">
+
+                <div class="banner">
+                    <img src="{% static 'img/banner-picture.png' %}" alt="" id="me-banner">
+                    <div class="text-name">
+                        <h1 id="name">Nicolas </h1>
+                        <h2 id="surname">Ribeiro</h2>
+                    </div>
+                </div>
+
+                <div id="short-about">
+                    <h5>Web Developer | Python Programmer</h5>
+                    <h3>From Uruguay for the world, I am a developer passionate about technology, programming and gaming. Self-taught and coffee lover.
+                    </h3>
+                    <p id="short-description">
+                        I started learning to code about three years ago thanks to CUTI (Camara Uruguaya de las Tecnologias de la Informacion). I'm a Python programmer and with this language <span id="highlight">i developed an auto-payroll management system that can pay 5 thousand employees</span> on an hour and create the paycheck for all.
+
+                        Welcome to my webpage and i invite you to read my personal blog!
+                    </p>
+                    <span id="email">Email: <a href="mailto:nikolasribeiro2@outlook.com">nikolasribeiro2@outlook.com</a></span>
+                </div>
+
+            </div>
+            <!--/Landing-->
+
+            
+
+
+            <!--Social Buttons-->
+            <div id="social">
+
+                <div class="box">
+                    <a href="https://www.github.com/nikolasribeiro" target="_blank" class="icon">K <span id="github">GitHub</span></a>
+                </div>
+
+                <div class="box">
+                    <a href="https://www.linkedin.com/in/nicolas-sebastian-ribeiro/" class="icon" target="_blank">l <span id="linkedin">LinkedIn</span></a>
+                </div>
+
+                <div class="box">
+                    <a href="https://www.gitlab.com/nicolasribeiro" target="_blank" class="icon">K <span id="gitlab">GitLab</span></a>
+                </div>
+
+            </div>
+            <!--/Social Buttons-->
+        </section>
+
+        {% endblock %}
+        
+    </div>
+
+    <footer>
+        Nicolas Ribeiro | &copy; 2020 Todos los derechos reservados
+    </footer>
+
+</body>
+</html>

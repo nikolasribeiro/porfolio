@@ -1,0 +1,56 @@
+{% extends 'blog/index.html' %}
+{% load static %}
+{% block content %}
+
+        <section class="blog-container">
+            <h1 id="title-blog">Recent Posts</h1>
+            
+            <div class="posts">
+                <div id="container-posts">
+
+                    {% for post in blogs %}
+                    <article class="post">
+
+                        <img src="{{post.image.url}}" alt="Article Image" class="preview-image">
+
+                        <div class="article-info">
+                            <h2 class="post-title">
+                                <a href="#">{{post.title}}</a>
+                            </h2>
+                            <div class="info-published">
+                                <span class="author">{{ post.author }}</span>
+                                <span class="date">{{ post.published }}</span>
+                            </div>
+                           
+                            <p class="post-description">
+                                {{ post.description }}
+                            </p>
+                            <div class="container-button">
+                                <div></div>
+                                <a href="#"     class="read-more">Read  More</a>
+                            </div>
+                        </div>
+                    </article>
+                    {% endfor %}
+ 
+                </div>
+
+                <div id="aside-blog">
+                    <h2 id="category-title">
+                        Categories
+                    </h2>
+                    <ul>
+                        <li><a href="#"> Technology </a></li>
+                        <li><a href="#"> Series </a></li>
+                        <li><a href="#"> Videogames </a></li>
+                    </ul>
+                </div> 
+
+            </div>
+        </section>
+        
+
+        
+    </div>
+
+{% endblock %}
