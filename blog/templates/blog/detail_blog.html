@@ -1,0 +1,20 @@
+{% extends 'blog/index.html' %}
+{% load static %}
+{% block content %}
+
+
+            <div class="detail_container">
+                <h1 class="title_post">{{posts.title}}</h1>
+                <div class="detail_more_info">
+                    <span class="author">{{posts.author}}</span> <span class="date">Published: {{posts.published}}</span>
+                </div>
+                <div class="detail_image_hero">
+                    <img src="{{ posts.image.url }}" alt="">
+                </div>
+                <div class="content_of_blog">
+                    {{posts.content_of_blog}}
+                </div>
+            </div>
+
+
+{% endblock %}

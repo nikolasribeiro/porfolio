@@ -31,3 +31,11 @@ def blog(request):
 
 def contact(request):
     return render(request, 'blog/contact.html')
+
+
+def detail_blog(request, slug):
+    posts = Blog.objects.get(slug=slug)
+    context = {
+        'posts':posts
+    }
+    return render(request, 'blog/detail_blog.html', context)

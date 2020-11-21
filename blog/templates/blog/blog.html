@@ -11,7 +11,7 @@
                     {% for post in blogs %}
                     <article class="post">
 
-                        <img src="{{post.image.url}}" alt="Article Image" class="preview-image">
+                        <img src="{{ post.image.url }}" alt="Article Image" class="preview-image">
 
                         <div class="article-info">
                             <h2 class="post-title">
@@ -27,7 +27,7 @@
                             </p>
                             <div class="container-button">
                                 <div></div>
-                                <a href="#"     class="read-more">Read  More</a>
+                                <a href="{% url 'detail' post.slug %}" class="read-more">Read  More</a>
                             </div>
                         </div>
                     </article>
