@@ -25,7 +25,7 @@ SECRET_KEY = 'p@htmwq-frkky6f*$j=z_xy*1=s^+^k7rkn6o_@+-%h#$bl^ux'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://personal-web-nicolasribeiro.herokuapp.com/','127.0.0.1']
 
 
 # Application definition
