@@ -1,0 +1,73 @@
+{% extends 'blog/index.html' %}
+{% load static %}
+{% block content %}
+        <!--Porfolio-->
+        
+        <section id="container">
+            <h2 id="title-heading">Porfolio</h2>
+            
+            <div id="articles">
+                <aside id="category">
+                <h2></h2>
+                <ul>
+                    <li><a href="#"> Python </a></li>
+                    <li><a href="#"> Web </a></li>
+                    <li><a href="#"> Designs </a></li>
+                </ul>
+                </aside>
+
+                <div id="projects">
+
+                    <article class="project">
+                        <div class="image-wrap silis"><img src="{% static 'img/silis.png' %}" alt="SILIS Image"></div>
+                        <div class="project-info">
+                            <a href="https://github.com/nikolasribeiro/SILISv4" target="_BLANK">SILIS</a>
+                            <p class="read-more">Read More</p>
+                        </div>
+                    </article>
+
+                    <article class="project">
+                        <div class="image-wrap"><img src="{% static 'img/clicker.png' %}" alt="Clicker Image"></div>
+                        <div class="project-info">
+                            <a href="https://gitlab.com/nicolasribeiro/clicker" target="_BLANK">Clicker Game</a>
+                            <p class="read-more">Read More</p>
+                        </div>
+                    </article>
+
+                    <article class="project">
+                        <div class="image-wrap"><img src="{% static 'img/install-developer.png' %}" alt="Terminal Image"></div>
+                        <div class="project-info">
+                            <a href="https://github.com/nikolasribeiro/install-developer" target="_BLANK">Install Developer Workstation</a>
+                            <p class="read-more">Read More</p>
+                        </div>
+                    </article>
+
+                    <article class="project">
+                        <div class="image-wrap"><img src="{% static 'img/personal-web.png' %}" alt="Website Image"></div>
+                        <div class="project-info">
+                            <a href="https://github.com/nikolasribeiro/porfolio" target="_BLANK">Personal Web Porfolio</a>
+                            <p class="read-more">Read More</p>
+                        </div>
+                    </article>
+
+                    <article class="project">
+                        <div class="image-wrap"><a href="https://covid-tracker-nr.netlify.app/" target="_blank" rel="noopener noreferrer"><img src="{% static 'img/covid-tracker.png' %}" alt="Covid Tracker"></a></div>
+                        <div class="project-info">
+                            <a href="https://github.com/nikolasribeiro/covid-tracker" target="_BLANK">COVID-19 Tracker</a>
+                            <p class="read-more">Read More</p>
+                        </div>
+                    </article>
+
+                    <!---->
+                 
+                </div>
+            </div>
+            
+        </section>
+        <!--/Porfolio-->
+
+
+    </div>
+
+
+{% endblock %}

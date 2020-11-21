@@ -1,0 +1,60 @@
+{% extends 'blog/index.html' %}
+{% load static %}
+{% block content %}
+
+        <section class="blog-container">
+            <h1 id="title-blog">Recent Posts</h1>
+            
+            <div class="posts">
+                <div id="container-posts">
+
+                    <article class="post">
+
+                            <img src="{% static 'img/lamp.jpg' %}" alt="Article Image" class="preview-image">
+
+                        <div class="article-info">
+                            <h2 class="post-title">
+                                <a href="#">I have an Idea</a>
+                            </h2>
+                            <div class="info-published">
+                                <span class="author">Author Name</span>
+                                <span class="date">Jan 18, 2020</span>
+                            </div>
+                           
+                            <p class="post-description">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium repellendus ab eaque non! Asperiores dolor minima delectus nesciunt autem beatae, commodi quos veritatis modi nemo expedita quia amet architecto error!
+                            </p>
+                            <div class="container-button">
+                                <div></div>
+                                <a href="#"     class="read-more">Read  More</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    
+
+                   
+
+
+                    
+                </div>
+
+                <div id="aside-blog">
+                    <h2 id="category-title">
+                        Categories
+                    </h2>
+                    <ul>
+                        <li><a href="#"> Technology </a></li>
+                        <li><a href="#"> Series </a></li>
+                        <li><a href="#"> Videogames </a></li>
+                    </ul>
+                </div> 
+
+            </div>
+        </section>
+        
+
+        
+    </div>
+
+{% endblock %}

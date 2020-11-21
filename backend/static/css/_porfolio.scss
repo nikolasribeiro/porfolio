@@ -1,0 +1,246 @@
+#container{
+    margin-top: 70px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 1px solid $primary;
+    border-radius: 0px 30px 0px 30px;
+
+
+
+    #title-heading{
+        color: $primary;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-left: 5%;
+        margin-bottom: 30px;
+        font-size: 50px;
+    }
+
+    #articles{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    #projects{
+        display: flex;
+        flex-flow: row wrap;
+        flex-basis: 70%;
+
+    }
+
+    .project{
+        flex-grow: 1;
+        overflow: hidden;
+        margin-bottom: 25px;
+        margin-right: 30px;
+        border: 3px solid #ccc;
+        border-radius: 0px 30px 0px 30px;
+        transition: all 300ms;
+        max-width: 350px;
+        height: 250px;
+        img{
+            width: 100%;
+            height: 180px;
+        }
+        
+    }
+    .project:hover{
+        transform: scale(1.1,1.1);
+        cursor: pointer;
+
+        .project-info{
+
+            background-color: $primary;
+        }
+    }
+
+    .project-info{
+        padding: 10px;
+        text-align: center;
+        transition: all 300ms;
+
+        a{
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 300ms;
+        }
+
+        a:hover{
+            text-decoration: underline;
+            text-shadow: 1px 1px 3px black;
+        }
+
+        p{
+            margin-top: 7px;
+        }
+        p:hover{
+            cursor: pointer;
+            color: white;
+            text-decoration: underline;
+        }
+    }
+}
+
+#category{
+    flex-basis: 15%;
+    margin-right: 30px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+
+    ul{
+        list-style: none;
+        li{
+            overflow: hidden;
+            border: 1px solid $primary;
+            border-radius: 0px 30px 0px 30px;
+            transition: all 300ms;
+            margin-bottom: 30px;
+        }
+
+        li:hover{
+            transform: translateX(20px);;
+        }
+    }
+
+    a{
+        display: block;
+        padding: 20px;
+        text-align: center;
+        transition: all 300ms;
+        text-transform: uppercase;
+        color: white;
+        text-decoration: none;
+    }
+
+    a:hover{
+        background-color: $primary;
+    }
+}
+
+.modal{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    margin: 0px auto;
+    background-color: rgba($color: $secondary, $alpha: 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: ease all 300ms;
+    
+    .modal-content{
+        width: 90%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 5px solid $primary;
+        background-color: #333;
+        border-radius: 0px 30px 0px 30px;
+
+
+        img{
+            width: 50%;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+    
+        p{
+            width: 50%;
+            color: white;
+        }
+    
+        .close-modal{
+            display: flex;
+            padding: 20px;
+            justify-content: center;
+    
+            h3{
+                color: white;
+            }
+    
+            h3, span{
+                
+                font-size: 40px;
+            }
+    
+            span{
+                color: $primary;
+                margin-left: 30%;
+            }
+            span:hover{
+                cursor: pointer;
+                
+            }
+            
+        }
+    }
+}
+
+.hide{
+    display: none;
+}
+
+
+
+
+
+
+
+/* Media Querys */
+@media (max-width: 768px){
+
+
+    #category{
+        display: none;
+    }
+
+    #title-heading{
+        text-align: center;
+    }
+
+    #projects{
+        margin-left: 45px;
+    }
+
+    .modal-content{
+        img{
+            width: 70% !important;
+            
+        }
+    
+        p{
+            width: 70% !important;
+           
+        }
+    }
+    
+}
+
+@media (max-width: 425px){
+
+    .modal-content{
+        img{
+            width: 90% !important;
+            
+        }
+    
+        p{
+            width: 90% !important;
+           
+        }
+    }
+
+}
