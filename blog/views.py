@@ -1,13 +1,25 @@
 from django.shortcuts import render, HttpResponse
-from .models import Porfolio, Blog
+from .models import Porfolio, Blog, Profile, Skills
 
 
 # Create your views here.
 def index(request):
-    return render(request, 'blog/index.html')
+    profile = Profile.objects.all()
+    context = {
+        "profile": profile
+    }
+    return render(request, 'blog/index.html', context)
 
 def about(request):
-    return render(request, 'blog/about.html')
+    profile = Profile.objects.all()
+    skills  = Skills.objects.all()
+
+
+    context = {
+        "profile":profile,
+        "skills": skills
+    }
+    return render(request, 'blog/about.html', context)
 
 #Agregar proyectos de forma dinamica
 def porfolio(request):
@@ -21,7 +33,7 @@ def porfolio(request):
 
 #Agregar articulos al blog de forma dinamica
 def blog(request):
-    blogs = Blog.objects.all()
+    blogs = Blog.objects.all().order_by('-published')
 
     context = {
         'blogs':blogs

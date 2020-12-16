@@ -1,124 +1,135 @@
 {% load static %}
 {% load cloudinary %}
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicolas Ribeiro</title>
+  <head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--Custom Styles-->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <!--Normalize-->
-    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
-    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/x-icon">
+	<link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+	<!--Bootstrap + Material Design-->
+	<!-- Font Awesome -->
+	<link
+	href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+	rel="stylesheet"
+	/>
+	<!-- Google Fonts -->
+	<link
+		href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+		rel="stylesheet"
+	/>
+	<!-- MDB -->
+	<link
+		href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/2.2.1/mdb.min.css"
+		rel="stylesheet"
+	/>
+
+	<title>Nicolas Ribeiro |{% block tab_title %} Website {% endblock %}</title>
+  </head>
+
+  <body class="bg-darktheme">
+	  <!--Navbar-->
+		<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+			<a class="navbar-brand" href="{% url 'index' %}">
+				<div class="container">
+					Nicolas <span class="badge bg-primario">Ribeiro</span>
+				</div>
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="{% url 'about' %}">About Me</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'porfolio' %}">Porfolio</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'blog' %}">Blog</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'contact' %}">Contact</a>
+				</li>
+			</ul>
+			</div>
+		</nav>
+	  <!--/Navbar-->
+    
+    {% block content %}
+	<div class="container-fluid mt-5">
+
+		<div class="row mb-5">
+            {% for elemento in profile %}
+			<!--Main Content-->
+			<div class="container-fluid row">
+				<div class="row justify-content-center">
+					<img src="{{ elemento.profile_image.url }}" alt="Nicolas Ribeiro" class="rounded-circle mb-5" style="width: 300px;">
+				</div>
+				<div class="container col align-self-center">
+					<h1 class="col-md text-center my-auto color-texto-darktheme"style="font-size: 120px;">Nicolas <span class="badge bg-primario">Ribeiro<span></h1>
+				</div>
+				<div class="container col-sm my-auto p-3">
+					<h4 class="color-texto-darktheme">Web Developer | <span class="badge bg-primario">Python Programmer</span></h1>
+
+					<p class="color-texto-darktheme">
+						From Uruguay for the world, I am a developer passionate about technology, programming and gaming. Self-taught and coffee lover.
+					I started learning to code about three years ago thanks to CUTI (Camara Uruguaya de las Tecnologias de la Informacion). I'm a Python programmer and with this language. <span class="primario"> I developed an auto-payroll management system that can pay 5 thousand employees </span> on an hour and create the paycheck for all. Welcome to my webpage and i invite you to read my personal blog!
+					</p>
+
+					<div class="alert bg-primario color-texto-darktheme" role="alert">
+						Email: <a href="mailto:nikolas.sebastian.ribeiro@gmail.com" class="color-texto-darktheme">nikolas.sebastian.ribeiro@gmail.com</a>.
+					</div>
+				</div>
+			</div>
+			<!--/Main Content-->
+            {% endfor %}
+		</div>
+
+		<div class="row text-center justify-content-evenly" style="font-size: 50px;">
+			<!--Social Buttons-->
+			<a href="https://www.github.com/nikolasribeiro" target="_blank" class="github color-texto-darktheme col-sm border rounded p-4 m-2 link"> 
+				<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-github color-texto-darktheme" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+				</svg>
+			
+				<span id="github">GitHub</span>
+
+				
+			</a>
+
+			<a href="https://www.linkedin.com/in/nicolas-sebastian-ribeiro/" class="color-texto-darktheme col-sm border rounded p-4 m-2 link" target="_blank"> 
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-linkedin color-texto-darktheme link" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212h-2.4s.03-6.547 0-7.225h2.4v1.023a5.54 5.54 0 0 0-.016.025h.016v-.025c.32-.493.89-1.193 2.165-1.193 1.58 0 2.764 1.033 2.764 3.252v4.143h-2.4V9.529c0-.972-.348-1.634-1.217-1.634-.664 0-1.059.447-1.233.878-.063.154-.079.37-.079.586v4.035z"/>
+				</svg>
+
+				<span id="linkedin">LinkedIn</span>
+			</a>
+
+			<a href="https://www.gitlab.com/nicolasribeiro" target="_blank" class="color-texto-darktheme col-sm border rounded p-4 m-2 link"> 
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-link-45deg color-texto-darktheme link" viewBox="0 0 16 16">
+					<path d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.001 1.001 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
+					<path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 0 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 0 0-4.243-4.243L6.586 4.672z"/>
+				</svg>
+			
+				<span id="gitlab">GitLab</span>
+			</a>
+			<!--/Social Buttons-->
+		</div>
+	</div>
+
+    {% endblock content %}
 
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+	<!-- MDB -->
+	<script
+	type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/2.2.1/mdb.min.js"
+	></script>
 
-    <!--Scripts-->
-    <script src="{% static 'js/menu.js' %}"></script>
-
-</head>
-<body>
-    <div class="wrap">
-        <!--Cabecera-->
-        <header id="header">
-
-            <div id="logo">
-                <p><a href="{% url 'index' %}">NR</a></p>
-            </div>
-
-            <div class="menubar">
-
-                <nav id="menu">
-                    <ul>
-                        <li><a href="{% url 'index' %}"> Home </a></li>
-                        <li><a href="{% url 'about' %}"> About Me</a></li>
-                        <li><a href="{% url 'porfolio' %}"> Porfolio </a></li>
-                        <li><a href="{% url 'blog' %}"> Blog </a></li>
-                        <li><a href="{% url 'contact' %}"> Contact </a></li>
-                    </ul>
-                </nav>
-                
-                <div class="burger">
-                    <span class="line line-1"></span>
-                    <span class="line line-2"></span>
-                    <span class="line line-3"></span>
-                </div>
-            </div>
-
-            <div id="search">
-                <div class="box-search">
-                    <input type="text" placeholder="Buscar...">
-                    <input type="button" value="L" class="icon">
-                </div>
-            </div>
-
-        </header>
-        <!--/Cabecera-->
-
-        {% block content %}
-        <div class="clearfix"></div>
-
-        <!--Landing-->
-        <section class="home">
-
-            <div id="main">
-
-                <div class="banner">
-                    <img src="{% static 'img/banner-picture.png' %}" alt="" id="me-banner">
-                    <div class="text-name">
-                        <h1 id="name">Nicolas </h1>
-                        <h2 id="surname">Ribeiro</h2>
-                    </div>
-                </div>
-
-                <div id="short-about">
-                    <h5>Web Developer | Python Programmer</h5>
-                    <h3>From Uruguay for the world, I am a developer passionate about technology, programming and gaming. Self-taught and coffee lover.
-                    </h3>
-                    <p id="short-description">
-                        I started learning to code about three years ago thanks to CUTI (Camara Uruguaya de las Tecnologias de la Informacion). I'm a Python programmer and with this language <span id="highlight">i developed an auto-payroll management system that can pay 5 thousand employees</span> on an hour and create the paycheck for all.
-
-                        Welcome to my webpage and i invite you to read my personal blog!
-                    </p>
-                    <span id="email">Email: <a href="mailto:nikolasribeiro2@outlook.com">nikolasribeiro2@outlook.com</a></span>
-                </div>
-
-            </div>
-            <!--/Landing-->
-
-            
-
-
-            <!--Social Buttons-->
-            <div id="social">
-
-                <div class="box">
-                    <a href="https://www.github.com/nikolasribeiro" target="_blank" class="icon">K <span id="github">GitHub</span></a>
-                </div>
-
-                <div class="box">
-                    <a href="https://www.linkedin.com/in/nicolas-sebastian-ribeiro/" class="icon" target="_blank">l <span id="linkedin">LinkedIn</span></a>
-                </div>
-
-                <div class="box">
-                    <a href="https://www.gitlab.com/nicolasribeiro" target="_blank" class="icon">K <span id="gitlab">GitLab</span></a>
-                </div>
-
-            </div>
-            <!--/Social Buttons-->
-        </section>
-
-        {% endblock %}
-        
-    </div>
-
-    <footer>
-        Nicolas Ribeiro | &copy; 2020 Todos los derechos reservados
-    </footer>
-
-</body>
+  </body>
 </html>

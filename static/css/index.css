@@ -1,0 +1,31 @@
+*{
+    text-decoration: none !important;
+}
+.bg-darktheme{
+    background-color: #1f1b24;
+}
+
+.color-texto-darktheme{
+    color: white;
+}
+
+.primario{
+    color: #f26c4f;
+}
+
+.bg-primario{
+    background-color: #f26c4f;
+}
+
+.margin-t{
+    margin-top: 130px;
+}
+
+.link{
+    color: white;
+}
+
+.link:hover, .link:hover svg{
+    color: #1f1b24;
+    background-color: #f26c4f;
+}

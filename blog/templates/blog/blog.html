@@ -3,55 +3,103 @@
 {% load cloudinary %}
 {% block content %}
 
-        <section class="blog-container">
-            <h1 id="title-blog">Recent Posts</h1>
-            
-            <div class="posts">
-                <div id="container-posts">
+    <!-- Page Content -->
+	<div class="container">
 
-                    {% for post in blogs %}
-                    <article class="post">
+		<div class="row">
 
-                        <img src="{{ post.image.url }}" alt="Article Image" class="preview-image">
+			<!-- Blog Entries Column -->
+			<div class="col-md-8">
 
-                        <div class="article-info">
-                            <h2 class="post-title">
-                                <a href="#">{{post.title}}</a>
-                            </h2>
-                            <div class="info-published">
-                                <span class="author">{{ post.author }}, </span>
-                                <span class="date">{{ post.published }}</span>
-                            </div>
-                           
-                            <p class="post-description">
-                                {{ post.description }}
-                            </p>
-                            <div class="container-button">
-                                <div></div>
-                                <a href="{% url 'detail' post.slug %}" class="read-more">Read  More</a>
-                            </div>
-                        </div>
-                    </article>
-                    {% endfor %}
- 
-                </div>
+				<h1 class="my-4 color-texto-darktheme">Blog Post</h1>
 
-                <div id="aside-blog">
-                    <h2 id="category-title">
-                        Categories
-                    </h2>
-                    <ul>
-                        <li><a href="#"> Technology </a></li>
-                        <li><a href="#"> Series </a></li>
-                        <li><a href="#"> Videogames </a></li>
-                    </ul>
-                </div> 
+                {% for blog in blogs %}
+				<!-- Blog Post -->
+				<div class="card mb-4 p-2">
+					<img class="card-img-top" src="{{blog.image.url}}" alt="Card image cap" width="750px" height="300">
+					<div class="card-body">
+						<h2 class="card-title">{{blog.title}}</h2>
+						<p class="card-text">{{blog.description}}</p>
+						<a href="{% url 'detail' blog.slug %}" class="btn link">Read More &rarr;</a>
+					</div>
+					<div class="card-footer text-muted">
+						Posted on {{blog.published}} by
+						<a href="index.html" class="primario">{{blog.author}}</a>
+					</div>
+				</div>
+                
+                {% endfor %}
+				
 
-            </div>
-        </section>
-        
+				<!-- Pagination -->
+				<ul class="pagination justify-content-center mb-4">
+					<li class="page-item">
+						<a class="page-link" href="#">&larr; Older</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#">Newer &rarr;</a>
+					</li>
+				</ul>
 
-        
-    </div>
+			</div>
+
+			<!-- Sidebar Widgets Column -->
+			<div class="col-md-4">
+
+				<!-- Search Widget -->
+				<div class="card my-4">
+					<h5 class="card-header">Search</h5>
+					<div class="card-body">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Search for...">
+							<span class="input-group-append">
+								<button class="btn link" type="button">Search</button>
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Categories Widget -->
+				<div class="card my-4">
+					<h5 class="card-header">Categories</h5>
+					<div class="card-body">
+						<div class="row">
+							<div class="col-lg-6">
+								<ul class="list-unstyled mb-0">
+									<li>
+										<a href="#">Web Design</a>
+									</li>
+									<li>
+										<a href="#">HTML</a>
+									</li>
+									<li>
+										<a href="#">Freebies</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col-lg-6">
+								<ul class="list-unstyled mb-0">
+									<li>
+										<a href="#">JavaScript</a>
+									</li>
+									<li>
+										<a href="#">CSS</a>
+									</li>
+									<li>
+										<a href="#">Tutorials</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		<!-- /.row -->
+
+	</div>
+	<!-- /.container -->
 
 {% endblock %}

@@ -2,93 +2,125 @@
 {% load static %}
 {% load cloudinary %}
 {% block content %}
-        <div class="wrap-content">
-            <section id="about-me">
 
-                <div class="box-content box2">
-                    <img src="{% static 'img/about-picture.png' %}" alt="Imagen 2" id="image2" class="box-pic">
-                    <div class="content">
-                        <p>
-                            <span class="heading">The technology and I</span><br> I started learn to code at least a 3
-                            years ago with Python language. In all this time, i learned about Object Oriented
-                            Programming and Graphic User Interfaces with PyQt5. I developed a automate payroll managment
-                            system that can handle at five thousand emploees in an hour. By this software, i started to
-                            have a big interest in big data and machine learning, so i created a virtual assistant
-                            called: Jenny. This assistant is in alpha at the moment because i need to learn more about
-                            speech recognition but im on it. <br>
+{% for element in profile %}
+<div class="container-fluid mt-5 mb-5 p-4">
+    <div class="main-body">
+          <div class="row gutters-sm">
 
-                            I had my first computer at the age of 7, with linux installed by default. Dont remember what
-                            distro, but i remember clearly something: a black screen with white letters. I enjoyed
-                            sitting in front of the computer and press all the keys in the keyboard pretending doing something.<br>
-
-                            By the moment, i still learning code by my self but recently i enrolled in Holberton School
-                            to deep more in my knowlegment about IT. <br>
-
-                        </p>
-                        <span class="title skills">My Current Skills</span>
-                        <div class="box-container-skill">
-
-                            <ul class="list skill">
-                                <li>HTML</li>
-                                <li>CSS - SCSS</li>
-                                <li>Python</li>
-                                <li>GIT</li>
-                                <li>Google Cloud (GCP)</li>
-                            </ul>
-
-                            <ul class="list skill">
-                                <li>Linux (Debian base distros) </li>
-                                <li>Django Backend Framework</li>
-                                <li>Linux Terminal Console</li>
-                                <li>AWS (Basic)</li>
-                                <li>English (B2)</li>
-                            </ul>
-
-                        </div>
+            <!--Left Card-->
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src="{{ element.profile_image.url }}" alt="Admin" class="rounded-circle" width="200">
+                    <div class="mt-3">
+                      <h4>{{element.name}}</h4>
+                      <p class="mb-1 primario">{{element.profession}}</p>
+                      <p class="text-muted font-size-sm">{{element.addres}}</p>
+                      <a href="{{element.linkedin_profile}}" target="_blank" class="btn link">Linkedin</a>
+                      <a href="{% url 'contact' %}" class="btn link">Message</a>
                     </div>
-
+                  </div>
                 </div>
-                <hr id="line">
+              </div>
 
-                <div class="box-content box1">
+              <div class="card mt-3">
+                <!--Start Social and Contact list-->
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe mr-2 icon-inline"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Mail</h6>
+                    <span class="primario">{{element.actual_mail}}</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github mr-2 icon-inline"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>Github</h6>
+                    <a href="{{element.github_profile}}" target="_blank" class="primario">nikolasribeiro</a>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-linkedin mr-2" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212h-2.4s.03-6.547 0-7.225h2.4v1.023a5.54 5.54 0 0 0-.016.025h.016v-.025c.32-.493.89-1.193 2.165-1.193 1.58 0 2.764 1.033 2.764 3.252v4.143h-2.4V9.529c0-.972-.348-1.634-1.217-1.634-.664 0-1.059.447-1.233.878-.063.154-.079.37-.079.586v4.035z"/>
+                      </svg>Linkedin</h6>
+                    <a href="{{element.linkedin_profile}}" target="_blank" class="primario">Nicolas Ribeiro</a>
+                  </li>
+                </ul>
+                <!--End Contact and Social list-->
+              </div>
+            </div>
+            <!--/Left Card-->
 
-                    <img src="{% static 'img/foto.jpg' %}" alt="" id="image1" class="box-pic">
-
-                    <div class="content">
-                        <p>
-                            I like playing videogames in my free time and watch content about new technologyes in
-                            Youtube. My recent interest in web development start on YouTube when i saw how to create a
-                            desktop application using HTML, CSS, Javascript with Electron and Python to make a wheather
-                            app. <br>
-                            Web Development always attracted me but never deep dive into it. When i started with this
-                            web-portfolio i realize how beautifull and grateful is this profession because is to much
-                            visual and i really like create nice GUIs. <br>
-                            I have more interests after videogames and technology. I really like series and i have a lot
-                            of series completed in my Netflix Account. In fact, just for visiting my website, i will
-                            recommend you a lists of very good series that you really needs to see: <br>
-                            <span class="title">-- Lists of Series --</span>
-                        </p>
-
-                        <ul class="list serie">
-                            <li> Dark </li>
-                            <li> Prison Break </li>
-                            <li> Breaking Bad</li>
-                            <li> Travelers </li>
-                            <li> The Blacklist </li>
-                            <li> Suits </li>
-                        </ul>
-
-                        <p>
-                            i will talk more about series and videogames in my personal blog in the future. I have
-                            another hobbys but if you want to know them, contact me or visit my personal blog! <br>
-                            i hope you like my website and have a nice day bro!
-                        </p>
+            <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Full Name</h6>
                     </div>
-
-
+                    <div class="col-sm-9 primario">
+                      {{element.full_name}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-9 primario">
+                      {{element.actual_mail}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Phone</h6>
+                    </div>
+                    <div class="col-sm-9 primario">
+                      Contact Me for More Info!
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Mobile</h6>
+                    </div>
+                    <div class="col-sm-9 primario">
+                        Contact Me for More Info!
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Address</h6>
+                    </div>
+                    <div class="col-sm-9 primario">
+                      {{element.living_addres}}
+                    </div>
+                  </div>
                 </div>
+              </div>
+{% endfor %}
 
-            </section>
+
+              <div class="row ">
+                <div class="col mb-3">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">My</i>Skills</h6>
+                      
+                      {% for skill in skills %}
+                      <small>{{skill.name_of_skill}}</small>
+                      <div class="progress mb-3" style="height: 5px">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: {{skill.skill_percent}}%" aria-valuenow="{{skill.skill_percent}}" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      {% endfor %}
+
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
         </div>
+    </div>
 
 {% endblock %}

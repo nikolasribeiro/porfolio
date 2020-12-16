@@ -3,24 +3,116 @@
 {% load cloudinary %}
 {% block content %}
 
-        <section class="container">
-            <div class="head">
-                <h2 id="title-contact">Contact Me</h2>
+    <!--Main Content-->
+    <div class="container my-5 py-5 z-depth-1">
+
+        <!--Section: Content-->
+        <section class="text-center px-md-5 mx-md-5 color-texto-darktheme">
+      
+          <!-- Section heading -->
+          <h3 class="font-weight-bold mb-4">Hire Me!</h3>
+          <!-- Section description -->
+          <p class="text-center w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam
+            eum porro a pariatur veniam.</p>
+      
+          <!-- Grid row -->
+          <div class="row">
+      
+            <!-- Grid column -->
+            <div class="col-md-9 mb-md-0 mb-5">
+      
+              <form>
+      
+                <!-- Grid row -->
+                <div class="row">
+      
+                  <!-- Grid column -->
+                  <div class="col-md-6">
+                    <div class="md-form mb-0">
+                      <input type="text" id="contact-name" class="form-control p-2" placeholder="Your Name">
+                    </div>
+                  </div>
+                  <!-- Grid column -->
+      
+                  <!-- Grid column -->
+                  <div class="col-md-6">
+                    <div class="md-form mb-0">
+                      <input type="text" id="contact-email" class="form-control p-2" placeholder="Your Email">
+                      <label for="contact-email" class=""></label>
+                    </div>
+                  </div>
+                  <!-- Grid column -->
+      
+                </div>
+                <!-- Grid row -->
+      
+                <!-- Grid row -->
+                <div class="row">
+      
+                  <!-- Grid column -->
+                  <div class="col-md-12">
+                    <div class="md-form mb-0">
+                      <input type="text" id="contact-Subject" class="form-control p-2" placeholder="Subject">
+                      <label for="contact-Subject" class=""></label>
+                    </div>
+                  </div>
+                  <!-- Grid column -->
+      
+                </div>
+                <!-- Grid row -->
+      
+                <!-- Grid row -->
+                <div class="row">
+      
+                  <!-- Grid column -->
+                  <div class="col-md-12">
+                    <div class="md-form">
+                      <textarea placeholder="Your Message" id="contact-message" class="form-control md-textarea" rows="9"></textarea>
+                      <label for="contact-message"></label>
+                    </div>
+                  </div>
+                  <!-- Grid column -->
+      
+                </div>
+                <!-- Grid row -->
+      
+              </form>
+      
+              <div class="text-center text-md-left">
+                <a class="btn btn-block p-2 btn-rounded" style="background-color: #f26c4f; font-size: 30px; color: white;">Send</a>
+              </div>
+      
             </div>
-            <div class="contact-form">
-                <form action="">
-                    <label for="">Email</label>
-                    <input type="email" name="" id="">
-                    <label for="">Name</label>
-                    <input type="text" name="" id="">
-                    <label for="">Message</label>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
-                    <input type="submit" value="Send">
-                </form>
+            <!-- Grid column -->
+      
+            <!-- Grid column -->
+            <div class="col-md-3 text-center">
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <i class="fas fa-map-marker-alt fa-2x blue-text"></i>
+                  <p>Montevideo, Uruguay</p>
+                </li>
+                <li>
+                    <i class="fas fa-envelope fa-2x mt-4 blue-text"></i>
+                    <a target="_blank" href="https://www.linkedin.com/in/nicolas-sebastian-ribeiro/"> https://www.linkedin.com/in/nicolas-sebastian-ribeiro/</a>
+                  </li>
+                <li>
+                  <i class="fas fa-envelope fa-2x mt-4 blue-text"></i>
+                  <p class="mb-0">nikolas.sebastian.ribeiro@gmail.com</p>
+                </li>
+              </ul>
             </div>
+            <!-- Grid column -->
+      
+          </div>
+          <!-- Grid row -->
+      
         </section>
+        <!--Section: Content-->
+      
+      
+      </div>
+    <!--/Main Content-->       
 
-        
-    </div>
-
-    {% endblock %}
+{% endblock %}

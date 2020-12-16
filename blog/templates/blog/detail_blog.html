@@ -4,18 +4,49 @@
 {% block content %}
 
 
-            <div class="detail_container">
-                <h1 class="title_post">{{posts.title}}</h1>
-                <div class="detail_more_info">
-                    <span class="author">{{posts.author}}</span> <span class="date">Published: {{posts.published}}</span>
-                </div>
-                <div class="detail_image_hero">
-                    <img src="{{ posts.image.url }}" alt="">
-                </div>
-                <div class="content_of_blog">
-                    {{posts.content_of_blog | safe}}
-                </div>
-            </div>
+    <!-- Page Content -->
+	<div class="container-fluid">
+
+		<div class="row justify-content-center">
+
+			<!-- Post Content Column -->
+			<div class="col-lg-8">
+
+				<!-- Title -->
+				<h1 class="mt-4 color-texto-darktheme">{{posts.title}}</h1>
+
+				<!-- Author -->
+				<p class="lead color-texto-darktheme">
+					by
+					<a href="#" class="primario">{{posts.author}}</a>
+				</p>
+
+				<hr>
+
+				<!-- Date/Time -->
+				<p class="color-texto-darktheme">Posted on {{posts.published}}</p>
+
+				<hr>
+
+				<!-- Preview Image -->
+				<img class="img-fluid rounded" src="{{posts.image.url}}" alt="" width="100%" height="300px">
+
+				<hr>
+
+				<!-- Post Content -->
+				<p class="lead color-texto-darktheme">{{posts.content_of_blog | safe}}</p>
+
+				<hr>
+
+				
+
+			</div>
+
+		</div>
+		<!-- /.row -->
+
+	</div>
+	<!-- /.container -->
 
 
 {% endblock %}
